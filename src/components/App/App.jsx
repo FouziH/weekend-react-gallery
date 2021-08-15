@@ -25,11 +25,25 @@ let [galleryList, setGalleryList] = useState([]);
     })
     
   }
+
+  const updateCountLikes = (id) => {
+    axios
+      .put(`/gallery/like/${id}`)
+      .then((response) => {
+        console.log("PUT /gallery/likes/:${id} is", response);
+        FetchGallery();
+      })
+      .catch((error) => {
+        console.log("/gallery/likes/:${id} error is", error);
+      });
+  }
     return (
       <div className="App">
       <Header />
         <p>Gallery goes here</p>
-        <GalleryList  galleryList={galleryList}/>
+        <GalleryList  galleryList={galleryList}
+        updateCountLikes ={updateCountLikes}
+        />
       </div>
     );
 }

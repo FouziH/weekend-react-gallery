@@ -4,7 +4,10 @@ Create Folder
        [x] galleryList.jsx file
     [X] galleryItem Folder   
         [x] galleryItem.jsx file 
+     
 [x] Add Images to the images folder 
 [] axios 
     [] GET request 
-    []  PUT request 
+    [] PUT request
+[] Add Button
+[] p elemtn that would display the liks count 
