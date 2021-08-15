@@ -1,8 +1,15 @@
-function GalleryItem({ item, updateCountLikes }) {
+import { useState } from "react";
 
-function AddLikes() {
-{updateCountLikes(item.id)}
-}
+function GalleryItem({ item, updateCountLikes }) {
+  let [toggle, setToggle] = useState(true)
+  
+  const toggler =() => {
+  setToggle(!toggle)
+  }
+
+  const AddLikes = () => {
+  {updateCountLikes(item.id)}
+  }
 
 let updateLikes = "";
 if(item.likes  <  1){
@@ -11,16 +18,26 @@ if(item.likes  <  1){
   updateLikes = `${item.likes} people love this!`
 }
 
-
   console.log("item is", item);
-  return (
-    <div>
-      <img src={item.path} />
-      <br />
-      <button onClick={AddLikes}>I love this!</button>
-      <p>{updateLikes}</p>
-    </div>
-  );
-}
+ 
+    if (toggle === false) {
+      return (
+        <div>
+          <p onClick={toggler}>{item.description}</p>
+          <br />
+          <button onClick={AddLikes}>I love this!</button>
+          <p>{updateLikes}</p>
+        </div>
+      );
+    }
 
+    return (
+      <div>
+        <img onClick={toggler} src={item.path} />
+        <br />
+        <button onClick={AddLikes}>I love this!</button>
+        <p>{updateLikes}</p>
+      </div>
+    );
+  }
 export default GalleryItem
