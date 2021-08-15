@@ -17,4 +17,12 @@ img{
   width: 100px;
   margin: 20px;
 }
+.description{
+border: 1px solid lightblue;
+margin: auto;
+width: 100px;
+height: 100px;
+padding: 10px;
+
+}
 

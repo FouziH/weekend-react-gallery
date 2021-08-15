@@ -23,7 +23,7 @@ if(item.likes  <  1){
     if (toggle === false) {
       return (
         <div>
-          <p onClick={toggler}>{item.description}</p>
+          <div className="description" onClick={toggler}>{item.description}</div>
           <br />
           <button onClick={AddLikes}>I love this!</button>
           <p>{updateLikes}</p>
