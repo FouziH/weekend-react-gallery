@@ -45,4 +45,4 @@ if(item.likes  <  1){
       </div>
     );
   }
-export default GalleryItem; //exportig GalleryItem 
+export default GalleryItem; //exporting GalleryItem 
